@@ -7,5 +7,13 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button block center>Download Image</button>
+    <button ion-button block center (click)="onDownload()">Download Image</button>
+    <!-- <img *ngIf="localURL" [src]="localURL"> -->
+    <h1>{{ status }}</h1>
+    <video *ngIf="localURL" [src]="localURL" autoplay controls>VIDEO</video>
+    <h1>Successfull Download</h1>
+    <p *ngIf="localURL">New file path: {{ localURL }}</p>
+    <h1>Full Response</h1>
+    <p>{{ printResponse }}</p>
+    <button ion-button block center color="danger" (click)="onDelete()">Delete</button>
 </ion-content>
